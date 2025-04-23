@@ -19,8 +19,8 @@ export async function getConnectionOptions(): Promise<ConnectionOptions> {
 
   if (isDeployed) {
     try {
-      const cert = await fs.readFile('/Users/ankitnayan/Desktop/temporal-certs/temporal-ca.pem');
-      const key = await fs.readFile('/Users/ankitnayan/Desktop/temporal-certs/temporal-ca.key');
+      const cert = await fs.readFile(process.env.TEMPORAL_SERVER_CERT || '');
+      const key = await fs.readFile(process.env.TEMPORAL_SERVER_KEY || '');
 
 
       const options = {
