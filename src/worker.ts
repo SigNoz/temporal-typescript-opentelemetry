@@ -1,3 +1,4 @@
+import { otelSdk, otlpHeaders, resource, traceExporter } from './instrumentation';
 // @@@SNIPSTART typescript-hello-worker
 import { makeTelemetryFilterString, NativeConnection, Runtime, Worker } from '@temporalio/worker';
 import * as activities from './activities';
@@ -7,7 +8,6 @@ import {
   OpenTelemetryActivityOutboundInterceptor,
   makeWorkflowExporter,
 } from '@temporalio/interceptors-opentelemetry/lib/worker';
-import { otelSdk, otlpHeaders, resource, traceExporter } from './instrumentation';
 import { logger } from './logger';
 import { metrics } from '@opentelemetry/api';
 

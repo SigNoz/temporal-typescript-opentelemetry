@@ -16,10 +16,12 @@ import { MetricReader, PeriodicExportingMetricReader } from '@opentelemetry/sdk-
 import { getNodeAutoInstrumentations } from '@opentelemetry/auto-instrumentations-node';
 import { Resource, detectResourcesSync } from '@opentelemetry/resources';
 import { envDetector, hostDetector, osDetector, processDetector } from '@opentelemetry/resources';
-import { diag } from '@opentelemetry/api';
 
-/* eslint-enable @typescript-eslint/no-unused-vars */
 
+// /* eslint-enable @typescript-eslint/no-unused-vars */
+import { DiagConsoleLogger, DiagLogLevel, diag } from '@opentelemetry/api';
+
+// diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.DEBUG);
 
 
 // Function to parse headers from OTEL_EXPORTER_OTLP_HEADERS
