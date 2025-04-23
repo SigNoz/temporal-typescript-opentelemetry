@@ -1,10 +1,10 @@
 // @@@SNIPSTART typescript-hello-client
+import { otelSdk } from './instrumentation';
 import { Connection, Client } from '@temporalio/client';
 import { example } from './workflows';
 import { nanoid } from 'nanoid';
 import { getConnectionOptions } from './connection';
 import { OpenTelemetryWorkflowClientInterceptor } from '@temporalio/interceptors-opentelemetry';
-import { otelSdk } from './instrumentation';
 
 async function run() {
   try {
